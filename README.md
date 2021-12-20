@@ -2,7 +2,7 @@
 Web based social recipe sharing app
 
 
-# Passion Project: Family Recipes
+## Passion Project: Family Recipes
 
 This will be a web based recipe app where members can socially share family and personal recipes.
 
