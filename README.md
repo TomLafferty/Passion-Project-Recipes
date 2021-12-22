@@ -13,3 +13,7 @@ Now family will have a place to share Grandmom's old family recipes as well as n
 Data will be collected and visualized based on popular ingredients and recipes.
 
 Using python, Django, postgreSQL, matplotlib
+
+Wireframes: (Developed using Balsamiq.cloud)
+
+![](wireframes/home_wireframe.png)
