@@ -145,7 +145,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # ------------------------------------------------------------------------------
 # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 # https://docs.djangoproject.com/en/dev/ref/settings/#internal-ips
-INTERNAL_IPS = ['127.0.0.1']
+
+
+import socket
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 
 # CUSTOM USER MODEL CONFIGS
 # ------------------------------------------------------------------------------
