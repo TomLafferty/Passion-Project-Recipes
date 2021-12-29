@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'recipes',
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 # MIDDLEWARE
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
