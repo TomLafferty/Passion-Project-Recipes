@@ -1,16 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
-from .forms import RecipeForm
+from .forms import RecipeForm, IngredientFormSet
 
 def create_recipe(request):
     if request.method == "GET":
         form = RecipeForm()
-        return render(request, 'create_recipe.html', {"form":form})
+        formset = IngredientFormSet()
+        return render(request, 'create_recipe.html', {"form":form, "formset":formset})
+
+
     elif request.method == "POST":
         form = RecipeForm(request.POST)
         if form.is_valid():
-            form.save()
+            recipe = form.save()
+            formset = IngredientFormSet(request.POST, instance=recipe)
+            if formset.is_valid():
+                formset.save()
             return redirect('/')
         else:
             return render(request, 'create_recipe.html', {"form":form})

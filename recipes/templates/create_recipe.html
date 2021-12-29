@@ -11,6 +11,13 @@
             {% csrf_token %}
             {{ form|crispy }}
             <!-- {{ form.as_p }} -->
+            <br>
+            <br>
+            <h2>Add Ingredients</h2>
+            {{ formset.management_form }}
+            {% for form in formset %}
+            {{ form|crispy }}
+            {% endfor %}
             <button type="submit">Submit</button>
         </form>
         </div>
