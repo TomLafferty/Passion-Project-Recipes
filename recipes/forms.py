@@ -21,3 +21,16 @@ class IngredientForm(forms.ModelForm):
 
 
 IngredientFormSet = forms.inlineformset_factory(Recipe, Ingredient, form=IngredientForm)
+
+class CommentForm(forms.Form):
+    author = forms.CharField(
+        max_length=60,
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Your Name"}
+        ),
+    )
+    body = forms.CharField(
+        widget=forms.Textarea(
+            attrs={"class": "form-control", "placeholder": "Leave a comment!"}
+        )
+    )

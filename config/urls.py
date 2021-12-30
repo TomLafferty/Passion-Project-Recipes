@@ -10,7 +10,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('pages.urls')),
     path('blog/', include('blog.urls')),
-    path('recipes/create/', create_recipe, name="create_recipe"),
+    # path('recipes/create/', create_recipe, name="create_recipe"),
+    path('recipes/', include('recipes.urls')),
 ]
 
 if settings.DEBUG:

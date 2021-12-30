@@ -1,4 +1,4 @@
-#!/Users/laffertythomas/dev/d22-django-templ/djangox/bin/python3.9
+#!/Users/laffertythomas/dev/Passion-Project-Recipes/djangox/bin/python3.9
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

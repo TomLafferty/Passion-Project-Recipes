@@ -37,7 +37,8 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/laffertythomas/dev/d22-django-templ/djangox"
+# VIRTUAL_ENV="/Users/laffertythomas/dev/d22-django-templ/djangox"
+VIRTUAL_ENV="/Users/laffertythomas/dev/Passion-Project-Recipes/djangox'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

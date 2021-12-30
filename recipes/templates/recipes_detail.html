@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="col-md-8 offset-md-2">
+    <h1>{{ recipes.title }}</h1>
+    <small>
+        <!-- {{ recipes.created_on.date }} |&nbsp; -->
+        <!-- Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'recipes_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %} -->
+    </small>
+    <p>{{ recipes.intro | linebreaks }}</p>
+    <p>{{ recipes.prep_time | linebreaks }}</p>
+    <p>{{ recipes.cook_time | linebreaks }}</p>
+    <p>{{ recipes.servings | linebreaks }}</p>
+    <h3>Leave a comment:</h3>
+    <form action="/recipes/{{ recipes.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+    <p>
+        On {{comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}
