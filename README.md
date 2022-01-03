@@ -1,6 +1,9 @@
 # Passion-Project-Recipes
 Web based social recipe sharing app
 
+This code has been a tremendous learning experience, but I am attempting to build from a simpler point.  See link below.
+REDIRECT: https://github.com/TomLafferty/passionrecipes.git
+
 
 ## Passion Project: Family Recipes
 

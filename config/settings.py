@@ -33,8 +33,8 @@ INSTALLED_APPS = [
     # Local
     'accounts',
     'pages',
-    'blog',
-    'recipes',
+    'blog.apps.BlogConfig',
+    'recipes.apps.RecipesConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from blog.forms import CommentForm
 from blog.models import Post, Comment
+from django.contrib.auth import get_user, get_user_model
 
 
 def blog_index(request):
@@ -26,9 +27,11 @@ def blog_detail(request, pk):
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
+           
             comment = Comment(
-                name=request.user,
-                # author=form.cleaned_data["author"],
+                
+                
+                author=form.cleaned_data["author"],
                 body=form.cleaned_data["body"],
                 post=post,
             )
